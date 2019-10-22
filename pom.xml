@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- =============================================================== -->
+	<!-- P A R E N T Description -->
+	<!-- =============================================================== -->
+
+	<parent>
+		<groupId>sg.lab</groupId>
+		<artifactId>spring-project-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<!-- =============================================================== -->
+	<!-- A R T I F A C T Description -->
+	<!-- =============================================================== -->
+
+	<artifactId>sgrest-spring-boot</artifactId>
+	<name>Rest Spring Boot</name>
+	<description>Rest Spring Boot</description>
+
+	<!-- Properties -->
+	<!-- =============================================================== -->
+	<properties>
+		<spring-boot-starter.version>2.1.6.RELEASE</spring-boot-starter.version>
+		<springfox-swagger.version>2.9.2</springfox-swagger.version>
+		<com.fasterxml.jackson.version>2.10.0</com.fasterxml.jackson.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<!-- ===================== Dependencies ===================== -->
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>${spring-boot-starter.version}</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<!-- Package as an executable jar/war -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
