@@ -27,6 +27,7 @@
 		<spring-boot-starter.version>2.1.6.RELEASE</spring-boot-starter.version>
 		<springfox-swagger.version>2.9.2</springfox-swagger.version>
 		<com.fasterxml.jackson.version>2.10.0</com.fasterxml.jackson.version>
+		<spring-boot-maven-plugin.version>2.2.0.RELEASE</spring-boot-maven-plugin.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
@@ -46,6 +47,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring-boot-maven-plugin.version}</version>
 			</plugin>
 		</plugins>
 	</build>
