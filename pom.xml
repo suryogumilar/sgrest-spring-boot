@@ -36,12 +36,13 @@
 	<!-- ===================== Dependencies ===================== -->
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-			<version>${spring-boot-starter.version}</version>
+			<groupId>sg.lab</groupId>
+			<artifactId>sgrest-jwt-lib</artifactId>
+			<version>${project.version}</version>
 		</dependency>
-		
-		<!-- for development , use hot reload when changing source code during development -->
+
+		<!-- for development , use hot reload when changing source code during 
+			development -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -49,11 +50,32 @@
 			<optional>true</optional>
 			<scope>provided</scope>
 		</dependency>
-
-
 	</dependencies>
 	<build>
+		<!-- Final Name -->
+		<finalName>${project.artifactId}-${project.version}</finalName>
 		<plugins>
+			<!-- Clean target plugion -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>${maven-clean-plugin.version}</version>
+				<configuration>
+					<failOnError>false</failOnError>
+				</configuration>
+			</plugin>
+
+			<!-- Compiler plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${maven.compiler.source.version}</source>
+					<target>${maven.compiler.target.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
 			<!-- Package as an executable jar/war -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

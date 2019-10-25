@@ -1,5 +1,6 @@
 package com.sg.springboot.rest;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,11 +12,13 @@ import com.sg.springboot.rest.model.HelloResponseMessage;
 
 @RestController
 public class RestHelloWorldController {
-
+	@Value("${hello.msg}")
+	private String hello;
+	
 	@RequestMapping(name = "hello", path = "/hello", method = RequestMethod.GET)
 	public HelloResponseMessage helloGet() {
 		HelloResponseMessage msg = new HelloResponseMessage();
-		msg.setHello("Hello, is it me you looking for?");
+		msg.setHello("Hello, "+hello);
 		return msg;
 	}
 
